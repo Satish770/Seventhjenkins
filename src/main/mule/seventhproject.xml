@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="15742a96-ab0b-4536-b17d-cb88e0338e34" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="seventhprojectFlow" doc:id="92c28507-895a-482f-964a-0cf75fb3ac58" >
+		<http:listener doc:name="Listener" doc:id="32b35161-6809-4eba-aa88-c3990031530f" config-ref="HTTP_Listener_config" path="/seven"/>
+		<logger level="INFO" doc:name="Logger" doc:id="61d11172-c141-4911-9c90-7e8d2ed00a33" message='"Message": "The logger is executed successfully........"'/>
+		<set-payload value='"Message": "The Set payload is executed successfully........"' doc:name="Set Payload" doc:id="b25e2752-f07e-41e3-8ed5-b6b5fbe7eb34" />
+	</flow>
+</mule>
